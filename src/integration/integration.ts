@@ -101,11 +101,9 @@ export function i18n(userI18nConfig: UserI18nConfig): AstroIntegration {
         // typing https://stackoverflow.com/a/68358341
         let entry: string;
         // @ts-expect-error
-        for await (entry of entries) {
-          console.log(entry)
-        }
         
         for await (entry of entries) {
+          console.log(entry)
           const parsedPath = path.parse(entry);
           const relativePath = path.relative(pagesPath, parsedPath.dir);
           const extname = parsedPath.ext.slice(1).toLowerCase();
