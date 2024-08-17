@@ -95,6 +95,9 @@ export function i18n(userI18nConfig: UserI18nConfig): AstroIntegration {
           ignore: excluded,
           onlyFiles: true,
         });
+
+        console.log(entries)
+        
         // typing https://stackoverflow.com/a/68358341
         let entry: string;
         // @ts-expect-error
