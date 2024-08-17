@@ -96,11 +96,15 @@ export function i18n(userI18nConfig: UserI18nConfig): AstroIntegration {
           onlyFiles: true,
         });
 
-        console.log(entries)
-        
+        console.log('-----------')
+
         // typing https://stackoverflow.com/a/68358341
         let entry: string;
         // @ts-expect-error
+        for await (entry of entries) {
+          console.log(entry)
+        }
+        
         for await (entry of entries) {
           const parsedPath = path.parse(entry);
           const relativePath = path.relative(pagesPath, parsedPath.dir);
